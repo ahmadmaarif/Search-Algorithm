@@ -5,14 +5,14 @@ namespace SearchAlgorithm
     class Program
     {
         //Array to be searched
-        int[] arr= new int[20];
+        int[] arr = new int[20];
         //Number of the elements in the array
         int i;
         int n;
-        
+
         public void input()
         {
-            while(true)
+            while (true)
             {
                 Console.Write("Enter the number of elements in the array:");
                 string s = Console.ReadLine();
@@ -20,7 +20,7 @@ namespace SearchAlgorithm
                 if ((n > 0) && (n <= 20))
                     break;
                 else
-                    Console.WriteLine("\n Array should have minumum 1And maximum 20 elements.\n");                
+                    Console.WriteLine("\n Array should have minumum 1And maximum 20 elements.\n");
             }
             //Console array elements
             Console.WriteLine("");
@@ -50,7 +50,7 @@ namespace SearchAlgorithm
 
                 //obtain the index of the elements in the array
                 int mid = (lowerbound + upperbound) / 2;
-                int ctr     = 1;
+                int ctr = 1;
 
                 //loop the search for the elements in the array
                 while ((item != arr[mid]) && (lowerbound <= upperbound))
@@ -70,11 +70,11 @@ namespace SearchAlgorithm
                 Console.WriteLine("\nNumber of comprasion: " + ctr);
 
                 Console.WriteLine("\nContinue search (y/n):");
-                ch = char.Parse(Console.ReadLine());   
+                ch = char.Parse(Console.ReadLine());
 
 
-             
-            } while ((ch == 'y') ||(ch =='Y')) ;
+
+            } while ((ch == 'y') || (ch == 'Y'));
         }
         public void LinearSeacrh()
         {
@@ -106,7 +106,44 @@ namespace SearchAlgorithm
 
             } while ((ch == 'y') || (ch == 'Y'));
         }
-        
+        static void Main(string[] args)
+        {
+            Program myList = new Program();
+            int pilihmenu;
+            char ch;
 
+            Console.WriteLine("Menu Option");
+            Console.WriteLine("=================");
+            Console.WriteLine("1. Linear Search ");
+            Console.WriteLine("2. Buinary Search");
+            Console.WriteLine("3. exit ");
+            Console.WriteLine("Enter your choice (1,2,3); ");
+            pilihmenu = Convert.ToInt32(Console.ReadLine());
+            switch (pilihmenu)
+            {
+                case 1:
+                    Console.WriteLine("");
+                    Console.WriteLine("_______________");
+                    Console.WriteLine(" Linear Search ");
+                    Console.WriteLine("_______________");
+                    myList.input();
+                    myList.LinearSeacrh();
+                    break;
+                case 2:
+                    Console.WriteLine("");
+                    Console.WriteLine("_______________");
+                    Console.WriteLine(" Binary Search ");
+                    Console.WriteLine("_______________");
+                    myList.input();
+                    myList.BinarySearch();
+                    break;
+                case 3:
+                    Console.WriteLine(" Exit ");
+                    break;
+                defaul:
+                    Console.WriteLine("error");
+                    break;
+            }
+        }
     }
 }
