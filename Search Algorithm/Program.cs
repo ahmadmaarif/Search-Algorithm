@@ -8,6 +8,7 @@ namespace SearchAlgorithm
         int[] arr= new int[20];
         //Number of the elements in the array
         int i;
+        int n;
         
         public void input()
         {
@@ -19,9 +20,20 @@ namespace SearchAlgorithm
                 if ((n > 0) && (n <= 20))
                     break;
                 else
-                Console.WriteLine("\n Array should have minumum 1And maximum 20 elements.\n")                
+                    Console.WriteLine("\n Array should have minumum 1And maximum 20 elements.\n");                
             }
-            
+            //Console array elements
+            Console.WriteLine("");
+            Console.WriteLine("____________________");
+            Console.WriteLine("Enter Array Elements");
+            Console.WriteLine("____________________");
+            for (i = 0; i < n; i++)
+            {
+                Console.WriteLine("<" + (i + 1) + ">");
+                string s1 = Console.ReadLine();
+                arr[i] = Int32.Parse(s1);
+
+            }
         }
     }
 }
